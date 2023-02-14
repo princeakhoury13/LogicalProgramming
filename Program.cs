@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            LogicalPrograms.PerfectNumbers();
+            LogicalPrograms.PrimeNumbers();
         }
     }
 }
