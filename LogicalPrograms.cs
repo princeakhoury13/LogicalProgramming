@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,23 +9,32 @@ namespace LogicalProgramming
 {
     public class LogicalPrograms
     {
-        public static void FibonacciSeries()
+        public static void PerfectNumbers()
         {
-            Console.WriteLine("Enter number of terms for Fibonacci Series: ");
-            int terms = Convert.ToInt32(Console.ReadLine());
-            int first_term = 0;
-            int second_term = 1;
-            int next_term;
-            Console.WriteLine("Here is the Fibonacci Series:");
-            Console.WriteLine(first_term);
-            Console.WriteLine(second_term);
+            int start, end;
+            Console.WriteLine("Enter the starting range: ");
+            start = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 2; i < terms; i++)
+            Console.WriteLine("Enter the ending range: ");
+            end = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Perfect numbers between " + start + " and " + end + ":");
+            for (int i = start; i <= end; i++)
             {
-                next_term = first_term + second_term;
-                Console.WriteLine(next_term);
-                first_term = second_term;
-                second_term = next_term;
+                int sum = 0;
+
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        sum += j;
+                    }
+                }
+
+                if (sum == i)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
