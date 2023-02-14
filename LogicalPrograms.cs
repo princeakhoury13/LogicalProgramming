@@ -9,7 +9,7 @@ namespace LogicalProgramming
 {
     public class LogicalPrograms
     {
-        public static void PerfectNumbers()
+        public static void PrimeNumbers()
         {
             int start, end;
             Console.WriteLine("Enter the starting range: ");
@@ -18,22 +18,23 @@ namespace LogicalProgramming
             Console.WriteLine("Enter the ending range: ");
             end = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Perfect numbers between " + start + " and " + end + ":");
+            Console.WriteLine("Prime numbers between " + start + " and " + end + ":");
             for (int i = start; i <= end; i++)
             {
-                int sum = 0;
+                bool isPrime = true;
 
-                for (int j = 1; j < i; j++)
+                for (int j = 2; j < i; j++)
                 {
                     if (i % j == 0)
                     {
-                        sum += j;
+                        isPrime = false;
+                        break;
                     }
                 }
 
-                if (sum == i)
+                if (isPrime)
                 {
-                    Console.WriteLine(i);
+                    Console.Write(i + " ");
                 }
             }
         }
