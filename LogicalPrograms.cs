@@ -9,34 +9,20 @@ namespace LogicalProgramming
 {
     public class LogicalPrograms
     {
-        public static void PrimeNumbers()
+        public static void ReverseNumbers()
         {
-            int start, end;
-            Console.WriteLine("Enter the starting range: ");
-            start = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter the ending range: ");
-            end = Convert.ToInt32(Console.ReadLine());
+            int n, reverse = 0, rem;
+            Console.WriteLine("Enter the number you want to reverse: ");
+            n=Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Prime numbers between " + start + " and " + end + ":");
-            for (int i = start; i <= end; i++)
+            while(n!=0)
             {
-                bool isPrime = true;
-
-                for (int j = 2; j < i; j++)
-                {
-                    if (i % j == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
-                }
-
-                if (isPrime)
-                {
-                    Console.Write(i + " ");
-                }
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n= n / 10;
             }
+            Console.WriteLine("Here is the reversed number: "+reverse);
         }
     }
 }
